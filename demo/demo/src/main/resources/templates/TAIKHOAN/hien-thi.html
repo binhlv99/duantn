@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>stt</td>
+        <td>ho ten</td>
+        <td>ngay sinh</td>
+        <td>gioi tinh</td>
+        <td>email</td>
+        <td>sdt</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="nv,index:${ListTaiKhoan}">
+        <td th:text="${nv.hoTen}"></td>
+        <td th:text="${nv.ngaySinh}"></td>
+        <td th:text="${nv.gioiTinh}"></td>
+        <td th:text="${nv.email}"></td>
+        <td th:text="${nv.soDienThoai}"></td>
+
+<!--        <td>-->
+<!--            <a th:href="@{/nhan-vien/remove/{id1}(id1=${nv.id})}">Remove</a>-->
+<!--        </td>-->
+    </tr>
+    </tbody>
+</table>
+
+<!--<select>-->
+<!--    <option th:each="cv:${Listchucvu}" th:text="${cv.getTen_chuc_vu()}"></option>-->
+<!--</select>-->
+</body>
+</html>
