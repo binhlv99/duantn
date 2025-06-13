@@ -1,17 +1,17 @@
 package com.poly.demo.controller;
 
-import com.poly.demo.repository.SanPhamRepo;
+import com.poly.demo.repository.DanhMucRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class SanPhamController {
+public class DanhMucController {
     @Autowired
-    private SanPhamRepo sanPhamRepo;
+    private DanhMucRepo danhMucRepo;
 
-    @GetMapping("/list-san-pham")
+    @GetMapping("/list-danh-muc")
     public String getHoaDon(Model model) {
 /*
         // Tao tai khoan admin ban dau
@@ -30,7 +30,7 @@ public class SanPhamController {
                 .build();
 
         taiKhoanRepo.save(accountCreate);*/
-        model.addAttribute("ListSanPham", sanPhamRepo.findAll());
+        model.addAttribute("ListDanhMuc", danhMucRepo.findAll());
         return "TAIKHOAN/hien-thi";
     }
 
