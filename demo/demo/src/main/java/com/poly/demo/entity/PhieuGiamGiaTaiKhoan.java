@@ -6,59 +6,37 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tai_khoan")
+@Table(name = "phieu_giam_gia_tai_khoan")
 @Data
 @Builder
-public class TaiKhoan {
+public class PhieuGiamGiaTaiKhoan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "id_vai_tro")
-    private Integer idVaiTro;
+    @Column(name = "id_tai_khoan")
+    private Integer idTaiKhoan;
 
-    @Column(name = "ten_dang_nhap")
-    private String tenDangNhap;
+    @Column(name = "id_phieu_giam_gia")
+    private Integer idPhieuGiamGia;
 
-    @Column(name = "mat_khau")
-    private String matKhau;
 
-    @Column(name = "ho_ten")
-    private String hoTen;
+    @Column(name = "nguoi_tao")
+    private String nguoiTao;
 
-    @Column(name = "ma")
-    private String ma;
-
-    @Column(name = "ngay_sinh")
-    private LocalDateTime ngaySinh;
-
-    @Column(name = "gioi_tinh")
-    private String gioiTinh;
-
-    @Column(name = "so_dien_thoai")
-    private Integer soDienThoai;
-
-    @Column(name = "email")
-    private String email;
+    @Column(name = "nguoi_sua")
+    private String nguoiSua;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "trang_thai",nullable = false)
-    private TaiKhoan.Status status = TaiKhoan.Status.ACTIVE;
-
-    @Column(name = "cccd")
-    private String cccd;
-
-    @Column(name = "hinh_anh")
-    private String hinhAnh;
-
+    private PhieuGiamGiaTaiKhoan.Status status = PhieuGiamGiaTaiKhoan.Status.ACTIVE;
 
 
     @CreatedDate
@@ -68,6 +46,7 @@ public class TaiKhoan {
     @LastModifiedDate
     @Column(name = "ngay_sua", nullable = false)
     private LocalDateTime updatedAt;
+
 
     public enum Status {
         ACTIVE,
